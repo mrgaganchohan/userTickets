@@ -8,9 +8,9 @@ class ReadFilesFromFolder:
     def __init__(self):
         pass
 
-    def read(self, file):
-        # reads single file
-        with open(file) as f:
+    def read(self, file_path):
+        # reads single file_path
+        with open(file_path) as f:
             data = json.load(f)
         return data
 

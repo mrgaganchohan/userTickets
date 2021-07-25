@@ -1,11 +1,10 @@
 import unittest
 
 from src.services.search_service import Search
-from tests import consts
 from tests.consts import consts_test_search
 
 
-class PrintTests(unittest.TestCase):
+class SearchTests(unittest.TestCase):
     def setUp(self):
         self.search_service = Search()
 

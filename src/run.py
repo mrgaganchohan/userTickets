@@ -22,7 +22,7 @@ class RunApplication:
             )
         return formatted_users_with_tickets
 
-    def search(self, type_of_search, user_data, ticket_data):
+    def get_input_data(self, type_of_search, user_data, ticket_data):
         print("Enter search term")
         search_term = input()
         print("Enter search value")
@@ -69,7 +69,7 @@ class RunApplication:
 
                 elif search_selection == "2":
                     type_of_search = "tickets"
-                user_with_tickets_arr = self.search(
+                user_with_tickets_arr = self.get_input_data(
                     type_of_search, user_data, ticket_data
                 )
                 print(user_with_tickets_arr)
