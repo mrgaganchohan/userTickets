@@ -10,7 +10,7 @@ class ReadTests(unittest.TestCase):
 
     def test_read_all_files_directory(self):
         directory = os.path.join(os.getcwd(), "tests/test_files")
-        self.assertEqual(
+        self.assertListEqual(
             self.read_service.read_all_files_directory(directory),
             consts_read_serv.EXPECTED_READ_ALL_FILES_DIRECTORY,
         )
