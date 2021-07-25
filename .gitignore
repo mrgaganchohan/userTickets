@@ -2,9 +2,8 @@ venv/
 .DS_Store
 .vscode
 __pycache__/
+*.pyc
 *.py[cod]
 htmlcov/
 .coverage
-.coveragerc
 .gitignore
-*.pyc

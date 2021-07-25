@@ -49,8 +49,8 @@ class RunApplicationTests(unittest.TestCase):
     def test_run_flow(self, mock_inputs):
         self.assertEqual(
             self.run_app.run_flow(
-                user_files_path="tests/test_files/users",
-                ticket_files_path="tests/test_files/tickets",
+                user_files_path="tests/test_json-files/users",
+                ticket_files_path="tests/test_json-files/tickets",
             ),
             "initial quit",
         )
@@ -59,8 +59,8 @@ class RunApplicationTests(unittest.TestCase):
     def test_run_flow_option1_users_search(self, mock_inputs):
         self.assertEqual(
             self.run_app.run_flow(
-                user_files_path="tests/test_files/users",
-                ticket_files_path="tests/test_files/tickets",
+                user_files_path="tests/test_json-files/users",
+                ticket_files_path="tests/test_json-files/tickets",
             ),
             {"last_value": consts_run.EXPECTED_RUN_FLOW_CHOICE_1},
         )
@@ -79,8 +79,8 @@ class RunApplicationTests(unittest.TestCase):
     def test_run_flow_option1_tickets_search(self, mock_inputs):
         self.assertEqual(
             self.run_app.run_flow(
-                user_files_path="tests/test_files/users",
-                ticket_files_path="tests/test_files/tickets",
+                user_files_path="tests/test_json-files/users",
+                ticket_files_path="tests/test_json-files/tickets",
             ),
             {"last_value": consts_run.EXPECTED_RUN_FLOW_CHOICE_2},
         )
@@ -89,8 +89,8 @@ class RunApplicationTests(unittest.TestCase):
     def test_run_flow_option_2(self, mock_inputs):
         self.assertEqual(
             self.run_app.run_flow(
-                user_files_path="tests/test_files/users",
-                ticket_files_path="tests/test_files/tickets",
+                user_files_path="tests/test_json-files/users",
+                ticket_files_path="tests/test_json-files/tickets",
             ),
             {"last_value": consts_run.EXPECTED_LIST_ALL_FIELDS},
         )
