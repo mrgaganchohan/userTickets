@@ -50,7 +50,7 @@ class Search:
            based on search term. e.g.: if name: Gagan is the search term,
            it will get all users with name Gagan.
         Args:
-            user_data ([]): array of users {}
+            user_data []: array of users {}
             search_term (str): search term entered, e.g.: 'name' or '_id'
             search_value (str): search value entered by user
             type_of_search (str): 'users' or 'tickets', but in this case
@@ -81,12 +81,25 @@ class Search:
     def get_filtered_tickets_by_search_term(
         self, ticket_data, search_term, search_value, type_of_search
     ):
+        """for type of search =>'tickets', it filters from the list of tickets
+           based on search term. e.g.: if tags: Ohio is the search term,
+           it will get all users with tag Ohio.
+
+        Args:
+            ticket_data []: contains ticket's data
+            search_term (str): search term entered, e.g.:  '_id'
+            search_value (str): search value entered by user
+            type_of_search (str): 'users' or 'tickets', but in this case
+                                it will always get type as tickets
+
+        Returns:
+            []: returns an array of ticket dictionaries
+        """
         filtered_tickets = []
 
         # if more array type fields are added in future, we can add it here
         list_of_arr_types = ["tags"]
         filtered_tickets = []
-        # assignie_id
         tickets_with_search_term = list(
             filter(lambda ticket: search_term in ticket, ticket_data)
         )
@@ -114,9 +127,18 @@ class Search:
         return filtered_tickets
 
     def get_tickets_for_users(self, filtered_users, ticket_data):
-        """
-        aid for user search
-        All filtered users with particular search term
+        """aid for user search
+
+        It gets All filtered users with particular search term, and
+        returns appropriate tickets linked to it
+
+        Args:
+            filtered_users []: contains list of users that are already filtered
+            with search_value and search_term
+            ticket_data []: contains data for all the tickets
+
+        Returns:
+            []: returns an array of users with associated tickets
         """
 
         copy_filtered_users = copy.deepcopy(filtered_users)
@@ -147,7 +169,11 @@ class Search:
     def get_owners_for_tickets(self, filtered_tickets, user_data):
         """
         aid for ticket search
+         It gets All filtered tickets with particular search term, and
+        returns appropriate owners linked to it
+
         filtered_tickets: [] contains all tickets that has given search term in it
+        user_data: []: contains data from all users
         """
         copy_filtered_tickets = copy.deepcopy(filtered_tickets)
         for ticket in copy_filtered_tickets:
@@ -175,7 +201,18 @@ class Search:
         self, type_of_search, search_term, search_value, user_data, ticket_data
     ):
         """
-        Returns user with given tickets with user's name or tickets with user name
+                Returns user with given tickets with user's name or tickets with user name
+
+
+        Args:
+            type_of_search (str): type of search e.g. 'users' or 'tickets'
+            search_term (str): search_term entered by user
+            search_value (str): search_value entered by user
+            user_data []: all the user_data provided
+            ticket_data []: all the ticket data provided
+
+        Returns:
+            []: an array of users with tickets or an array of tickets with users linked
         """
         filtered_search_data = []
         search_data = []

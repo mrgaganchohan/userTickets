@@ -1,27 +1,31 @@
 class PrintService:
     def get_unique_keys(self, array_of_dicts):
+        """gives unique keys base on array of dict
+
+        Args:
+            array_of_dicts []: array of dicts
+
+        Returns:
+            []: array of unique keys
+        """
         uniqur_keys = []
         for dictionary in array_of_dicts:
             for key in dictionary:
-                if not key in uniqur_keys:
+                if key not in uniqur_keys:
                     uniqur_keys.append(key)
         return uniqur_keys
 
     def list_all_fields(self, user_data, ticket_data):
-        print_string = ''
-        user_data = [
-            {
-                "_id": 1001,
-                "name": "Test1",
-                        "created_at": "2016-04-15T05:19:46-10:00",
-                        "verified": True
-            },
-            {
-                "_id": 1002,
-                "name": "Test2",
-                        "created_at": "2016-04-15T05:19:46-10:00"
-            }
-        ]
+        """lists all unique searchable fields
+
+        Args:
+            user_data []: array of users
+            ticket_data []: array of tickets
+
+        Returns:
+            [type]: [description]
+        """
+        print_string = ""
 
         print_string = "---------------------------"
         print_string = print_string + "\nSearch Users with:"
@@ -38,16 +42,26 @@ class PrintService:
         return print_string
 
     def get_welcome_text(self):
+        """
+        Returns:
+            str: Welcome test
+        """
         welcome_text = "Welcome to Search\n"
-        welcome_text = welcome_text + \
-            "Type 'quit' to exit at any time, Press 'Enter' to continue "
+        welcome_text = (
+            welcome_text + "Type 'quit' to exit at any time, Press 'Enter' to continue "
+        )
         return welcome_text
 
     def get_search_options(self):
-        search_options_text = '\tSelect Search options:\n'
-        search_options_text = search_options_text + '\t * Press 1 to search\n'
-        search_options_text = search_options_text + \
-            "\t * Press 2 to view a list of searchable fields\n"
+        """
+        Returns:
+            str: returns search selection for search and view list
+        """
+        search_options_text = "\tSelect Search options:\n"
+        search_options_text = search_options_text + "\t * Press 1 to search\n"
+        search_options_text = (
+            search_options_text + "\t * Press 2 to view a list of searchable fields\n"
+        )
         search_options_text = search_options_text + "\t * Type 'quit' to exit\n"
         return search_options_text
 

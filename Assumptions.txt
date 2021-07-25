@@ -1,0 +1,6 @@
+Following Assumptions has been made:
+  1. json-files: Assumptiion has been made that json-files/users will have users.json file and json-files/tickets will have tickets.json only
+  2. Since multiple files can be places in json-files/users/ folder, it has been assumed that all the users and all tickets will have different ids
+  3. Since I was not making any API calls, I didn't mock functions, instead allowed them to be called in testing.
+  4. while entering data for verified for user search, make sure, it is either true or false
+  5. Name searches are done for whole name, so for name "Gagan" , "Gag" wont work
