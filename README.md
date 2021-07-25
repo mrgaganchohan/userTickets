@@ -2,25 +2,25 @@
   For better preview, go to https://github.com/mrgaganchohan/userTickets  to see in good format, or in vscode right click on README.md => 'Open Preview'
 
 ## Structure of Project
-  - main.py: main.py sits in the root of the project. This is the main file which sits in 'TICKETAPPLICATION' folder
+  - main.py: main.py sits in the root of the project. This is the main file which sits in 'userTickets' folder
 
   - **json-files** : This folder in turn contains two folders, which are "users" and "tickets". These folders are used for placing files which are meant to be read. For example:
-      - Multiple user files(.json) can be placed inside json-files/users, and data of all of them will be combined.
+      - Multiple user files(.json) can be placed inside json-files/users, and data of all of them will be combined for search purposes. By default: both have files inside them
       - Similarly, tickets folder can have multiple tickets file whose data will be combined while running
     
   - **src**: src folder has two main things
-      - run.py: contains main workflow, which calls other services like search, read pr print
-      - **services**: It contains category specific service files like search(search_service.py) or read or print_service. For example read only performs reading from files, and printing takes care of strings which gets displayed on console.
+      - run.py: contains main workflow, which calls other services like search, read or print
+      - **services**: It contains category specific service files like search(search_service.py) or read_service or print_service. For example read only performs reading from files, and printing takes care of strings which gets displayed on console.
     
-  - **tests**: tests folder contains test for services files and run.py file.For testing read functionality, it also has a foldeer called test_json-files which contains tickets and users json files for testing
+  - **tests**: tests folder contains test for services files and run.py file.For testing  whether users.json or tickets.json's read functionality, it also has a foldeer called test_json-files which contains tickets and users json files for testing
 
 ## Installation & set up
    **Language used** : Python 3.9.6 has been used to run the project. For best results please make sure you have at least 3.9 installed on your system. You can download it from here https://www.python.org/downloads/
 
-   **OS** : Project has been tested on a OSX
+   **OS** : Project has been tested on OSX (MAC)
 
 ## Set up
-Requiremtnts: python installed on system. check your version by running following command in terminal
+Requirements: python installed on system. check your version by running following command in terminal
 ```
 python3 -V
    
@@ -59,7 +59,7 @@ Assuming you have installed python 3.9.6(might work with python 3.7+ but hasn't 
    Python 3.9.6
    ```
 
-   json-files folder already has users and tickets folder, which in turn  has ['users.json', 'users 2.json'], 'users.json'] and ['tickets.json'].
+   json-files folder already has users and tickets folder, which in turn  has ['users.json', 'users 2.json'], 'users.json'] and ['tickets.json'].So, nothing needs to be done from user's end
    Execution command in root folder of project as :
    ```
    python main.py
@@ -71,9 +71,13 @@ Assuming you have installed python 3.9.6(might work with python 3.7+ but hasn't 
    Type 'quit' to exit at any time, Press 'Enter' to continue 
    ```
 # Running Tests
-  - To run tests, make sure you are in project's root directory
+  - To run tests, make sure you are in project's root directory.
   ```
   python -m unittest
+  ----------------------------------------------------------------------
+  Ran 24 tests in 0.007s
+
+  OK  
   ```
 # check code coverage
   ## Install coverage
@@ -83,6 +87,14 @@ Assuming you have installed python 3.9.6(might work with python 3.7+ but hasn't 
    ```
 
   ## check code coverga
+  ### First discover unit tests with following command:
+  ```
+  coverage run -m unittest discover
+
+  Ran 24 tests in 0.008s
+  OK
+  ```
+  and then  check coverage as follows
   ``` 
   coverage report -m 
   Name                             Stmts   Miss  Cover   Missing
