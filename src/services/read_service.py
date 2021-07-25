@@ -3,16 +3,7 @@ import os
 import glob
 
 
-class ReadFiles:
-    def __init__(self):
-        pass
-    # TODO: add karg here
-
-    def read(self):
-        pass
-
-
-class ReadFilesFromFolder(ReadFiles):
+class ReadFilesFromFolder:
     # used for reading multiple files from a folder
     def __init__(self):
         pass
@@ -24,7 +15,7 @@ class ReadFilesFromFolder(ReadFiles):
         return data
 
     def read_all_files_directory(self, directory):
-        json_pattern = os.path.join(directory, '*.json')
+        json_pattern = os.path.join(directory, "*.json")
         file_list = glob.glob(json_pattern)
         combined_data = []
         for file in file_list:

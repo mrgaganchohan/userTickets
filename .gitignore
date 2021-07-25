@@ -3,3 +3,8 @@ venv/
 .vscode
 __pycache__/
 *.py[cod]
+htmlcov/
+.coverage
+.coveragerc
+.gitignore
+*.pyc
